@@ -25,7 +25,7 @@ crawler:
 
 # 推送模式选择
 report:
-  mode: "incremental" # 改为增量模式，避免重复推送
+  mode: "daily" # 临时改为daily模式测试推送（测试完成后可改回incremental）
   rank_threshold: 5 # 排名高亮阈值
   sort_by_position_first: false # 排序优先级：true=先按配置位置排序，false=先按热点条数排序
   max_news_per_keyword: 0 # 每个关键词最大显示数量，0=不限制
@@ -45,7 +45,7 @@ notification:
   #   - 只想在工作日白天接收推送（如 09:00-18:00）
   #   - 希望在晚上固定时间收到汇总（如 20:00-22:00）
   push_window:
-    enabled: false  # 启用推送时间窗口控制
+    enabled: false  # 临时关闭时间窗口，方便测试（测试完成后可改回 true）
     # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
     # 如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
     time_range:
